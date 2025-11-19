@@ -34,6 +34,24 @@
   color: #646cff;
 }
 
+.controls-panel h3 {
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  color: #646cff;
+  font-size: 1.2rem;
+}
+
+.view-section {
+  margin-bottom: 3rem;
+}
+
+.view-section-title {
+  font-size: 2rem;
+  color: #646cff;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
 .control-group {
   display: flex;
   flex-direction: column;
@@ -42,7 +60,7 @@
 
 .controls-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   gap: 1rem;
   margin-top: 1rem;
   max-width: 100%;
@@ -129,6 +147,112 @@
   height: auto;
   border-radius: 8px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.tile-grid {
+  display: grid;
+  gap: 0;
+  width: 100%;
+  max-width: 100%;
+}
+
+.tile-image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.panoramic-container {
+  background: #1a1a1a;
+  border-radius: 12px;
+  padding: 1rem;
+  margin-bottom: 2rem;
+  border: 1px solid #333;
+  overflow-x: auto;
+  overflow-y: hidden;
+  width: 100%;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+  scrollbar-color: #646cff #1a1a1a;
+}
+
+.panoramic-container::-webkit-scrollbar {
+  height: 8px;
+}
+
+.panoramic-container::-webkit-scrollbar-track {
+  background: #1a1a1a;
+  border-radius: 4px;
+}
+
+.panoramic-container::-webkit-scrollbar-thumb {
+  background: #646cff;
+  border-radius: 4px;
+}
+
+.panoramic-container::-webkit-scrollbar-thumb:hover {
+  background: #535bf2;
+}
+
+.panoramic-row {
+  display: flex;
+  flex-direction: row;
+  width: max-content;
+  gap: 0;
+}
+
+.scrollable-tile-wrapper {
+  aspect-ratio: 1;
+  min-width: 256px;
+  width: 256px;
+  flex-shrink: 0;
+  position: relative;
+  background: #0a0a0a;
+}
+
+.scrollable-tile-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.scrollable-tile-placeholder {
+  width: 100%;
+  height: 100%;
+  background: #0a0a0a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.scrollable-tile-placeholder::after {
+  content: '⏳';
+  opacity: 0.3;
+  font-size: 1.5rem;
+}
+
+.next-panoramic-button {
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  border: 1px solid #646cff;
+  background: #646cff;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.3s;
+  margin-top: 1.75rem;
+  width: 100%;
+}
+
+.next-panoramic-button:hover {
+  background: #535bf2;
+  border-color: #535bf2;
+}
+
+.next-panoramic-button:active {
+  background: #4348d8;
 }
 
 .info-box {
