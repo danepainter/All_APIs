@@ -34,54 +34,67 @@
   color: #646cff;
 }
 
-.controls-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 1.5rem;
-  margin-bottom: 1.5rem;
-}
-
 .control-group {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: 0.75rem;
+}
+
+.controls-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.controls-grid .control-group {
+  min-width: 0;
+  max-width: 100%;
+  overflow: hidden;
 }
 
 .control-group label {
   font-weight: 500;
   color: rgba(255, 255, 255, 0.87);
+  font-size: 1.1rem;
 }
 
-.control-group input {
-  padding: 0.75rem;
+.control-group select,
+.control-group input,
+.layer-select {
+  padding: 0.75rem 1rem;
   border-radius: 6px;
   border: 1px solid #333;
   background: #242424;
   color: white;
   font-size: 1rem;
-  transition: border-color 0.3s;
+  transition: all 0.3s;
+  cursor: pointer;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
-.control-group input:focus {
+.control-group select:focus,
+.control-group input:focus,
+.layer-select:focus {
   outline: none;
+  border-color: #646cff;
+  box-shadow: 0 0 0 3px rgba(100, 108, 255, 0.1);
+}
+
+.control-group select:hover,
+.control-group input:hover,
+.layer-select:hover {
   border-color: #646cff;
 }
 
-.load-button {
-  width: 100%;
-  padding: 1rem;
-  background: #646cff;
+.control-group select option {
+  background: #242424;
   color: white;
-  border: none;
-  border-radius: 6px;
-  font-size: 1rem;
-  font-weight: 500;
-  cursor: pointer;
-  transition: background 0.3s;
-}
-
-.load-button:hover {
-  background: #535bf2;
+  padding: 0.5rem;
 }
 
 .image-container {
@@ -150,6 +163,13 @@
   
   .page-header h1 {
     font-size: 2rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .controls-grid {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
   }
 }
 
