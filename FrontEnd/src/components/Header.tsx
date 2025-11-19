@@ -40,6 +40,15 @@ function Header() {
             <span className="nav-icon">🛰️</span>
             Space Images
           </NavLink>
+
+          <NavLink 
+            to="/dogs" 
+            className={({ isActive }) => isActive ? 'nav-link active' : 'nav-link'}
+            onClick={() => setMobileMenuOpen(false)}
+          >
+            <span className="nav-icon">🐶</span>
+            Dogs
+          </NavLink>
         </div>
       </nav>
     </header>

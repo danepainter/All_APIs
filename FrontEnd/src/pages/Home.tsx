@@ -17,19 +17,12 @@ function Home() {
           <span className="card-link">Explore →</span>
         </Link>
 
-        <div className="feature-card coming-soon">
-          <div className="card-icon">📞</div>
-          <h2>Phone Numbers API</h2>
-          <p>Manage phone numbers with 2600Hz API integration</p>
-          <span className="card-link">Coming Soon</span>
-        </div>
-
-        <div className="feature-card coming-soon">
-          <div className="card-icon">🔌</div>
-          <h2>More APIs</h2>
-          <p>Additional API integrations coming soon</p>
-          <span className="card-link">Coming Soon</span>
-        </div>
+        <Link to="/dogs" className="feature-card">
+          <div className="card-icon">🐶</div>
+          <h2>Dogs</h2>
+          <p>Get random dog images from the Dog CEO API</p>
+          <span className="card-link">Explore →</span>
+        </Link>
       </div>
 
       <div className="info-section">
