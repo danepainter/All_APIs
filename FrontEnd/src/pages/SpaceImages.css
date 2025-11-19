@@ -1,0 +1,155 @@
+.space-images-page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.page-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.page-header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  color: #646cff;
+}
+
+.page-header p {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 1.1rem;
+}
+
+.controls-panel {
+  background: #1a1a1a;
+  border-radius: 12px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  border: 1px solid #333;
+}
+
+.controls-panel h2 {
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  color: #646cff;
+}
+
+.controls-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.control-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.control-group label {
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.87);
+}
+
+.control-group input {
+  padding: 0.75rem;
+  border-radius: 6px;
+  border: 1px solid #333;
+  background: #242424;
+  color: white;
+  font-size: 1rem;
+  transition: border-color 0.3s;
+}
+
+.control-group input:focus {
+  outline: none;
+  border-color: #646cff;
+}
+
+.load-button {
+  width: 100%;
+  padding: 1rem;
+  background: #646cff;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.load-button:hover {
+  background: #535bf2;
+}
+
+.image-container {
+  background: #1a1a1a;
+  border-radius: 12px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  border: 1px solid #333;
+  text-align: center;
+  min-height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.loading-spinner {
+  color: #646cff;
+  font-size: 1.2rem;
+}
+
+.error-message {
+  color: #ff4444;
+  padding: 1rem;
+  background: rgba(255, 68, 68, 0.1);
+  border-radius: 6px;
+  border: 1px solid #ff4444;
+}
+
+.space-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.info-box {
+  background: #1a1a1a;
+  border-radius: 12px;
+  padding: 2rem;
+  border: 1px solid #333;
+}
+
+.info-box h3 {
+  margin-top: 0;
+  color: #646cff;
+}
+
+.info-box p {
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.attribution {
+  font-size: 0.9rem;
+  font-style: italic;
+  color: rgba(255, 255, 255, 0.5);
+  margin-bottom: 0;
+}
+
+@media (max-width: 768px) {
+  .controls-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .page-header h1 {
+    font-size: 2rem;
+  }
+}
+
