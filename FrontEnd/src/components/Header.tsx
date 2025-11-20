@@ -49,6 +49,14 @@ function Header() {
             <span className="nav-icon">🐶</span>
             Dogs
           </NavLink>
+
+          <NavLink 
+            to="/color-palette"
+            className={({ isActive }) => isActive ? 'nav-link active' : 'nav-link'}
+            onClick={() => setMobileMenuOpen(false)}
+            >
+              Color
+            </NavLink>
         </div>
       </nav>
     </header>
