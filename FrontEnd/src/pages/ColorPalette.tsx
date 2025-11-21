@@ -80,34 +80,48 @@ function ColorPalette() {
 
     return (
       <div className="color-palette-page">
-        <div className="page-header">
-          <h1>Color Palette</h1>
-        </div>
-        
-        {loading && <p className="loading-message">Loading palette...</p>}
-        {error && <p className="error-message">Error: {error}</p>}
-        
-        {palette && (
-          <div className="palette-container">
-            {palette.map((color, index) => {
-              const hex = rgbToHex(color[0], color[1], color[2]);
-              return (
-                <div 
-                  key={index} 
-                  className="color-card"
-                  style={{ backgroundColor: `rgb(${color[0]}, ${color[1]}, ${color[2]})` }}
-                >
-                  <div className="color-card-content">
-                    <div className="color-hex">{hex.toUpperCase()}</div>
-                    <div className="color-rgb">
-                      RGB({color[0]}, {color[1]}, {color[2]})
+        <div className="palette-wrapper">
+
+          <div className="page-header">
+            <h1>Color Palette</h1>
+          </div>
+          
+          {loading && <p className="loading-message">Loading palette...</p>}
+          {error && <p className="error-message">Error: {error}</p>}
+          
+          {palette && (
+            <div className="palette-container">
+              {palette.map((color, index) => {
+                const hex = rgbToHex(color[0], color[1], color[2]);
+                return (
+                  <div 
+                    key={index} 
+                    className="color-card"
+                    style={{ backgroundColor: `rgb(${color[0]}, ${color[1]}, ${color[2]})` }}
+                  >
+                    <div className="color-card-content">
+                      <div className="color-hex">{hex.toUpperCase()}</div>
+                      <div className="color-rgb">
+                        RGB({color[0]}, {color[1]}, {color[2]})
+                      </div>
                     </div>
                   </div>
-                </div>
-              );
-            })}
+                );
+              })}
+            <button 
+              className="random-palette-button"
+              onClick={fetchColorPalette}
+              disabled={loading}
+            >
+              {loading ? 'Generating..' : 'Generate New Palette'}
+            </button>
+              
+            </div>
+          )}
           </div>
-        )}
+
+
+
       </div>
     );
 }
