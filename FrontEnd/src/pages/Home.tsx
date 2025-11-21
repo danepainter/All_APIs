@@ -23,6 +23,11 @@ function Home() {
           <p>Get random dog images from the Dog CEO API</p>
           <span className="card-link">Explore →</span>
         </Link>
+
+        <Link to="/color-palette" className="feature-card">
+          <h2>Color Palettes</h2>
+          <span className="card-link">Explore →</span>
+        </Link>
       </div>
 
       <div className="info-section">

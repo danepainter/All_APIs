@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import './ColorPalette.css'
  
 
 //Type definitions
@@ -13,7 +14,13 @@ interface ColorPaletteResponse {
 
 type Color = [number, number, number]; //RGB value tuple
 
-
+//helper function to  convert rgb to hex
+const rgbToHex = (r: number, g: number, b: number): string => {
+  return "#" + [r, g, b].map(x => {
+    const hex=x.toString(16);
+    return hex.length == 1 ? "0" + hex : hex;
+  }).join("");
+};
 
 
 function ColorPalette() {
@@ -72,31 +79,37 @@ function ColorPalette() {
 
 
     return (
-        <div className="color-palette-page">
-          <div className="page-header">
-            <h1>Color Palette</h1>
-          </div>
-          
-          {loading && <p>Loading palette...</p>}
-          {error && <p className="error-message">Error: {error}</p>}
-          
-          {palette && (
-            <div className="palette-container">
-              {palette.map((color, index) => (
+      <div className="color-palette-page">
+        <div className="page-header">
+          <h1>Color Palette</h1>
+        </div>
+        
+        {loading && <p className="loading-message">Loading palette...</p>}
+        {error && <p className="error-message">Error: {error}</p>}
+        
+        {palette && (
+          <div className="palette-container">
+            {palette.map((color, index) => {
+              const hex = rgbToHex(color[0], color[1], color[2]);
+              return (
                 <div 
                   key={index} 
-                  className="color-swatch"
+                  className="color-card"
                   style={{ backgroundColor: `rgb(${color[0]}, ${color[1]}, ${color[2]})` }}
                 >
-                  <span className="color-rgb">
-                    RGB({color[0]}, {color[1]}, {color[2]})
-                  </span>
+                  <div className="color-card-content">
+                    <div className="color-hex">{hex.toUpperCase()}</div>
+                    <div className="color-rgb">
+                      RGB({color[0]}, {color[1]}, {color[2]})
+                    </div>
+                  </div>
                 </div>
-              ))}
-            </div>
-          )}
-        </div>
-      );
+              );
+            })}
+          </div>
+        )}
+      </div>
+    );
 }
 
 export default ColorPalette;

@@ -20,6 +20,72 @@
     font-size: 1.1rem;
   }
   
+  .loading-message,
+  .error-message {
+    text-align: center;
+    padding: 2rem;
+    font-size: 1.1rem;
+  }
+
+  .error-message {
+    color: #ff4444;
+    background: rgba(255, 68, 68, 0.1);
+    border-radius: 8px;
+    border: 1px solid #ff4444;
+  }
+
+  .palette-container {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+    width: 100%;
+  }
+
+  .color-card {
+    position: relative;
+    width: 100%;
+    padding-bottom: 100%;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+  }
+
+  .color-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+  }
+
+  .color-card-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(10px);
+    padding: 1.5rem;
+    color: white;
+    z-index: 10;
+    box-sizing: border-box;
+  }
+
+  .color-hex {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    font-family: 'Courier New', monospace;
+    letter-spacing: 1px;
+  }
+
+  .color-rgb {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.8);
+    font-family: 'Courier New', monospace;
+  }
+
   @media (max-width: 768px) {
     .page-header h1 {
       font-size: 2rem;
@@ -27,5 +93,21 @@
     
     .color-palette-page {
       padding: 1.5rem;
+    }
+
+    .palette-container {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+
+    .color-hex {
+      font-size: 1.2rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .palette-container {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
     }
   }
